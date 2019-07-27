@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item button *ngFor="let contact of contacts" routerLink="/chat-page">
+    <ion-item button *ngFor="let contact of contacts" routerLink="/chat-page/{{contact.name}}">
       <ion-avatar>
         <ion-img [src]="contact.imgUri"></ion-img>
       </ion-avatar>

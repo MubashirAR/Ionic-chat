@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import * as io from 'socket.io-client';
 
 
 @Component({
@@ -8,8 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    // console.log(this.route.snapshot.paramMap.get('userId'));
+   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const socket = io('http://localhost:3000')
+    // socket.onasd()
+  }
 
 }
