@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  contacts = [
+    {
+      name: 'Joe',
+      imgUri: 'https://randomuser.me/api/portraits/men/32.jpg'
+    },
+    {
+      name: 'Doe',
+      imgUri: 'https://randomuser.me/api/portraits/men/32.jpg'
+    },
+  ]
   constructor() {}
 
 }
