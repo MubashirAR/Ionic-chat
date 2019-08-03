@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    console.log(route.snapshot.paramMap.get('userId'));
+   }
 
   ngOnInit() {}
 

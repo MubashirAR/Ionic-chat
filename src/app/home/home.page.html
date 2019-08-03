@@ -7,8 +7,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item button *ngFor="let contact of contacts" routerLink="/chat-page">
+  <ion-item>
+    <ion-input [(ngModel)]="username" placeholder="Enter username" *ngIf="!hideInput">
+  
+    </ion-input>
+    <ion-button  *ngIf="!hideInput" (click)="hideInputField()">
+      Submit
+    </ion-button>
+  </ion-item>
+  <ion-list *ngIf="hideInput">
+    <ion-item button *ngFor="let contact of contacts" routerLink="/chat-page/{{contact.name}}">
       <ion-avatar>
         <ion-img [src]="contact.imgUri"></ion-img>
       </ion-avatar>

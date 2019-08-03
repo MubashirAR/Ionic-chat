@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SocketService } from '../service/socket.service';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  username: String;
+  hideInput: boolean;
 
   contacts = [
     {
@@ -17,6 +20,13 @@ export class HomePage {
       imgUri: 'https://randomuser.me/api/portraits/men/32.jpg'
     },
   ]
-  constructor() {}
+  constructor(private socket: SocketService) {}
+  hideInputField() {
+    this.hideInput = true;
+    this.setOnline(this.username);
+  }
+  setOnline(username){
+    this.socket.online(username);
+  }
 
 }
