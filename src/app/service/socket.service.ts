@@ -12,7 +12,7 @@ export class SocketService {
   }
 
   initialize(){
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://mazchat.herokuapp.com/');
   }
   online(username){
     this.socket.emit('online', username);
